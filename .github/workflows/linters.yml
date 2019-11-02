@@ -16,13 +16,11 @@ on: [push, pull_request]
 # Jobs run in parallel (unless linked by `needs`)
 jobs:
   markdownlint:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: sunjon/github_actions/actions/markdownlint@master
 
   yamllint:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: sunjon/github_actions/actions/yamllint@master

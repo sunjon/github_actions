@@ -25,27 +25,24 @@ jobs:
       #   with:
       #     repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # step 2
       - uses: actions/checkout@master
 
-      # step 3
+      # Filters
+      - name: PR-filter
+        uses: actions/bin/filter@master
+        args: ref refs/pulls/*
+
+      - name: master-filter
+        uses: actions/bin/filter@master
+        args: branch master
+
+      # Actions
       - name: markdownlint
         uses: sunjon/github_actions/actions/markdownlint@master
 
       - name: yamllint
         uses: sunjon/github_actions/actions/yamllint@master
 
-
-      # Filters
-      # - name: "pr filter"
-      #   uses: "actions/bin/filter@master"
-      #   args: "ref refs/pulls/*"
-
-      # - name: "master filter"
-      #   uses: "actions/bin/filter@master"
-      #   args: "branch master"
-
-      # Actions
       # - name: "bash-lint"
       #   uses: "sunjon/actions/bash@master"
 

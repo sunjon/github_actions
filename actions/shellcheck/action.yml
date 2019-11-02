@@ -6,3 +6,10 @@ description: "GitHub Action that runs shellcheck on all bash/sh files in a repo"
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.level }}
+    - ${{ inputs.reporter }}
+    - ${{ inputs.path }}
+    - ${{ inputs.pattern }}
+    - ${{ inputs.exclude }}

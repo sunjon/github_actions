@@ -1,4 +1,4 @@
-FROM ruby:latest
+FROM ruby:2.6.5-alpine
 
 LABEL version="0.0.1"
 LABEL "repository"="http://github.com/sunjon/actions"

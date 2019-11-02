@@ -11,27 +11,27 @@ jobs:
 
     steps:
       # step 1
-      - name: "Install Linters"
-        needs:
-          [
-            hadolint,
-            kubeval,
-            markdownlint,
-            rubocop,
-            shellcheck,
-            shfmt-lint,
-            yamllint,
-          ]
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: "Install Linters"
+      #   needs:
+      #     [
+      #       hadolint,
+      #       kubeval,
+      #       markdownlint,
+      #       rubocop,
+      #       shellcheck,
+      #       shfmt-lint,
+      #       yamllint,
+      #     ]
+      #   with:
+      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       # step 2
-      # - name: checkout
-      # - uses: actions/checkout@master
+      - name: checkout
+      - uses: actions/checkout@master
 
       # step 3
-      # - name: yamllint
-      # - uses: sunjon/actions/yamllint@master
+      - name: yamllint
+      - uses: sunjon/actions/yamllint@master
 
       # Filters
       # - name: "pr filter"

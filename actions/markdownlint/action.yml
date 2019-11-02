@@ -2,6 +2,7 @@
 name: "markdownlint"
 
 description: "GitHub Action that runs markdownlint on all *.md files in a repo"
+continue-on-failure: true
 
 runs:
   using: "docker"

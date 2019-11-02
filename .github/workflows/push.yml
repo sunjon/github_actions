@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # step 1
       - name: "Install Linters"
         needs:
           [
@@ -24,8 +25,13 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
+      # step 2
+      - name: checkout
       - uses: actions/checkout@master
 
+      # step 3
+      - name: yamllint
+      - uses: sunjon/actions/yamllint@master
 
       # Filters
       # - name: "pr filter"
@@ -60,5 +66,3 @@ jobs:
       #   uses: "sunjon/actions/shfmt@master"
       #   run: ["master filter"]
 
-      - name: yamllint
-        uses: sunjon/actions/yamllint@master

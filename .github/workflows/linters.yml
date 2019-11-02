@@ -15,11 +15,23 @@ on: [push, pull_request]
 
 # Jobs run in parallel (unless linked by `needs`)
 jobs:
+  cookstyle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: sunjon/github_actions/actions/cookstyle@master
+
   markdownlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: sunjon/github_actions/actions/markdownlint@master
+
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: sunjon/github_actions/actions/shellcheck@master
 
   yamllint:
     runs-on: ubuntu-latest
@@ -27,11 +39,11 @@ jobs:
       - uses: actions/checkout@master
       - uses: sunjon/github_actions/actions/yamllint@master
 
-  cookstyle:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: sunjon/github_actions/actions/cookstyle@master
+      # - name: "shfmt-lint"
+      #   uses: "sunjon/actions/shfmt@master"
+      #   run: ["master filter"]
+
+
     # - run: ["master filter"]
 
       # Filters
@@ -57,9 +69,3 @@ jobs:
       #   uses: "sunjon/actions/rubocop@master"
       #   run: ["master filter"]
 
-      # - name: "shellcheck"
-      #   uses: "sunjon/actions/shellcheck@master"
-
-      # - name: "shfmt-lint"
-      #   uses: "sunjon/actions/shfmt@master"
-      #   run: ["master filter"]

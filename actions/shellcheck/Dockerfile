@@ -5,15 +5,16 @@ LABEL "com.github.actions.description"="Provides linting using shellcheck"
 LABEL "com.github.actions.icon"="user-check"
 LABEL "com.github.actions.color"="blue"
 
-LABEL "repository"="http://github.com/sunjon/actions"
-LABEL "homepage"="http://github.com/sunjon/actions"
+LABEL "repository"="https://github.com/sunjon/github_actions"
+LABEL "homepage"="https://github.com/sunjon/github_actions"
 LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
 RUN apk --no-cache add \
-  curl~=7 \
-  jq~=1.6 \
-  bash~=4 \
-  git~=2
+  bash~=5 \
+  fd
+#   curl~=7 \
+#   jq~=1.6 \
+#   git~=2
 
 COPY lib.sh /lib.sh
 COPY entrypoint.sh /entrypoint.sh

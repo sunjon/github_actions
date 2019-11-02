@@ -6,7 +6,8 @@ set -euo pipefail
 source /lib.sh
 
 lint() {
-	find . -name '*.sh' -type f -exec shellcheck -a {} +
+  # Use fd (https://github.com/sharkdp/fd) instead of the default find
+  fd --exclude ".git" --type f --extension sh . --exec shellcheck -a {} +
 }
 
 _lint_action "${@}"

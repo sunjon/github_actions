@@ -1,4 +1,4 @@
-Delta CI: Linter actions for [GitHub Actions](https://github.com/features/actions)
+# Delta CI: Linter actions for [GitHub Actions](https://github.com/features/actions)
 
 ## Related tools 
 

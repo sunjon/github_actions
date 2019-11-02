@@ -3,6 +3,27 @@ name: "shellcheck"
 
 description: "GitHub Action that runs shellcheck on all bash/sh files in a repo"
 
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: true
+  level:
+    description: 'Report level for reviewdog [info,warning,error]'
+    default: 'error'
+  reporter:
+    description: |
+      Reporter of reviewdog command [github-pr-check,github-pr-review].
+      Default is github-pr-check.
+      github-pr-review can use Markdown and add a link to rule page in reviewdog reports.
+    default: 'github-pr-check'
+  path:
+    description: "Base directory to run shellcheck. Same as `[path]` of `find` command."
+    default: '.'
+  pattern:
+    description: "File patterns of target files. Same as `-name [pattern]` of `find` command."
+    default: '*.sh'
+  exclude:
+    description: "Exclude patterns of target files. Same as `-not -path [exclude]` of `find` command."
 runs:
   using: "docker"
   image: "Dockerfile"

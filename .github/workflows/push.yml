@@ -30,7 +30,7 @@ jobs:
 
       # step 3
       - name: markdownlint
-        uses: sunjon/actions/markdownlint@master
+        uses: sunjon/github_actions/actions/markdownlint@master
 
       - name: yamllint
         uses: sunjon/github_actions/actions/yamllint@master

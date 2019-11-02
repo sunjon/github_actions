@@ -29,8 +29,8 @@ jobs:
       - uses: actions/checkout@master
 
       # step 3
-      # - uses: sunjon/actions/yamllint@master
-      - uses: ./.github/actions/yamllint@master
+      - uses: sunjon/actions/yamllint@master
+      # - uses: ./.github/actions/yamllint@master
 
 
       # Filters

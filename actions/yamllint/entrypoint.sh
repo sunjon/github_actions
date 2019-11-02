@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # shellcheck disable=SC1091
-# source /lib.sh
+source /lib.sh
 
 lint() {
         yamllint "${GITHUB_WORKSPACE}/**/*.yml"

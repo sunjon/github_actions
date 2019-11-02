@@ -1,13 +1,14 @@
 FROM python:3.7.4-alpine
 
-LABEL "com.github.actions.name"="yaml"
-LABEL "com.github.actions.description"="Provides linting and fixes using yamllint"
-LABEL "com.github.actions.icon"="user-check"
-LABEL "com.github.actions.color"="purple"
-
+LABEL version="0.0.1"
 LABEL "repository"="http://github.com/sunjon/actions"
 LABEL "homepage"="http://github.com/sunjon/actions"
 LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
+
+LABEL "com.github.actions.name"="yamllint"
+LABEL "com.github.actions.description"="Provides linting and fixes using yamllint"
+LABEL "com.github.actions.icon"="package"
+LABEL "com.github.actions.color"="purple"
 
 RUN pip install yamllint
 
@@ -17,6 +18,7 @@ RUN apk --no-cache add \
   bash~=5 \
   git~=2
 
-COPY lib.sh /lib.sh
+# COPY lib.sh /lib.sh
 COPY entrypoint.sh /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]

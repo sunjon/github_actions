@@ -3,14 +3,14 @@
 set -euo pipefail
 
 # shellcheck disable=SC1091
-source /lib.sh
+# source /lib.sh
 
 lint() {
-	yamllint .
+        yamllint "${GITHUB_WORKSPACE}/**/*.yml"
 }
 
 fix() {
-	yamllint . --fix
+        yamllint "${GITHUB_WORKSPACE}/**/*.yml --fix"
 }
 
 _lint_and_fix_action yamllint "${@}"

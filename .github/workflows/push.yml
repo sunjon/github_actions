@@ -37,28 +37,28 @@ jobs:
       #   args: "branch master"
 
       # Actions
-      - name: "bash-lint"
-        uses: "sunjon/actions/bash@master"
+      # - name: "bash-lint"
+      #   uses: "sunjon/actions/bash@master"
 
-      - name: "hadolint"
-        uses: "sunjon/actions/hadolint@master"
+      # - name: "hadolint"
+      #   uses: "sunjon/actions/hadolint@master"
 
-      - name: "kubeval"
-        uses: "sunjon/actions/kubeval@master"
+      # - name: "kubeval"
+      #   uses: "sunjon/actions/kubeval@master"
 
-      - name: "markdownlint"
-        uses: "sunjon/actions/markdownlint@master"
+      # - name: "markdownlint"
+      #   uses: "sunjon/actions/markdownlint@master"
 
-      - name: "rubocop"
-        uses: "sunjon/actions/rubocop@master"
-        run: ["master filter"]
+      # - name: "rubocop"
+      #   uses: "sunjon/actions/rubocop@master"
+      #   run: ["master filter"]
 
-      - name: "shellcheck"
-        uses: "sunjon/actions/shellcheck@master"
+      # - name: "shellcheck"
+      #   uses: "sunjon/actions/shellcheck@master"
 
-      - name: "shfmt-lint"
-        uses: "sunjon/actions/shfmt@master"
-        run: ["master filter"]
+      # - name: "shfmt-lint"
+      #   uses: "sunjon/actions/shfmt@master"
+      #   run: ["master filter"]
 
-      - name: "yamllint"
-        uses: "sunjon/actions/yamllint@master"
+      - name: yamllint
+        uses: sunjon/actions/yamllint@master

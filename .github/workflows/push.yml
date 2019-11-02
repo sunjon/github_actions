@@ -26,12 +26,12 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       # step 2
-      - name: checkout
-      - uses: actions/checkout@master
+      # - name: checkout
+      # - uses: actions/checkout@master
 
       # step 3
-      - name: yamllint
-      - uses: sunjon/actions/yamllint@master
+      # - name: yamllint
+      # - uses: sunjon/actions/yamllint@master
 
       # Filters
       # - name: "pr filter"

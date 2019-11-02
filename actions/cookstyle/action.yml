@@ -3,6 +3,8 @@ name: "cookstyle"
 
 description: "GitHub Action that runs Chef cookstyle on all *.rb files in a repo"
 
+outputs: _cookstyle
+
 runs:
   using: "docker"
   image: "Dockerfile"

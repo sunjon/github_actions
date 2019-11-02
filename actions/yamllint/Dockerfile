@@ -10,13 +10,13 @@ LABEL "com.github.actions.description"="Provides linting and fixes using yamllin
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="purple"
 
-RUN pip install yamllint
+RUN pip install --quiet --no-cache-dir yamllint
 
-RUN apk --no-cache add \
-  curl~=7 \
-  jq~=1.6 \
-  bash~=5 \
-  git~=2
+# RUN apk --no-cache add \
+#   curl~=7 \
+#   jq~=1.6 \
+#   bash~=5 \
+#   git~=2
 
 COPY lib.sh /lib.sh
 COPY entrypoint.sh /entrypoint.sh

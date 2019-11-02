@@ -10,8 +10,8 @@ LABEL "homepage"="https://github.com/sunjon/actions"
 LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
 RUN apk --no-cache add \
-  bash=5 \
-  make=4.1
+  bash=~5 \
+  make=~4.2
 
 # RUN apt-get update -qq && apt-get install -qqy --no-install-recommends \
 #   curl=7.52* \

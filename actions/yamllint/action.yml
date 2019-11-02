@@ -1,6 +1,7 @@
+---
 name: "yamllint"
 
-description: "GitHub Action that runs the Node.js version of the yamllint CLI to lint all *.yml files in a repo"
+description: "GitHub Action that runs yamllint on all *.yml files in a repo"
 
 runs:
   using: "docker"

@@ -30,6 +30,7 @@ jobs:
 
       # step 3
       - uses: sunjon/github_actions/actions/yamllint@master
+        args: lint
       # - uses: ./.github/actions/yamllint@master
 
 

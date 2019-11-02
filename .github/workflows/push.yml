@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@master
 
       # step 3
-      - uses: sunjon/actions/yamllint@master
+      - uses: sunjon/github_actions/yamllint@master
       # - uses: ./.github/actions/yamllint@master
 
 

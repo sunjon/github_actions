@@ -2,7 +2,6 @@
 name: "yamllint"
 
 description: "GitHub Action that runs yamllint on all *.yml files in a repo"
-continue-on-failure: true
 
 runs:
   using: "docker"

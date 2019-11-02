@@ -30,11 +30,11 @@ jobs:
       # Filters
       - name: PR-filter
         uses: actions/bin/filter@master
-        args: ref refs/pulls/*
+        args: "ref refs/pulls/*"
 
       - name: master-filter
         uses: actions/bin/filter@master
-        args: branch master
+        args: "branch master"
 
       # Actions
       - name: markdownlint

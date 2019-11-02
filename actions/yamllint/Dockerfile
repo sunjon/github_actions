@@ -12,10 +12,11 @@ LABEL "com.github.actions.color"="purple"
 
 RUN pip install --disable-pip-version-check --quiet --no-cache-dir yamllint
 
-RUN apk --no-cache add \
-  curl~=7 \
-  bash~=5
-  # git~=2
+# Pinned versions of container dependencies
+# RUN apk --no-cache add \
+#   curl~=7 \
+#   bash~=5 \
+#   git~=2
 #   jq~=1.6 \
 
 ADD lib.sh /lib.sh

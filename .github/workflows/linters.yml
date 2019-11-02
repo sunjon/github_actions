@@ -15,23 +15,17 @@ on: [push, pull_request]
 
 # Jobs run in parallel (unless linked by `needs`)
 jobs:
-  lint:
+  markdownlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - uses: sunjon/github_actions/actions/markdownlint@master
 
-      - name: markdownlint
-        uses: sunjon/github_actions/actions/markdownlint@master
-        continue-on-error: true
-
-  lint2:
+  yamllint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-
-      - name: yamllint
-        uses: sunjon/github_actions/actions/yamllint@master
-        continue-on-error: true
+      - uses: sunjon/github_actions/actions/yamllint@master
 
       # Filters
       # - name: PR-filter

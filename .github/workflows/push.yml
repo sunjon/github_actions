@@ -64,4 +64,3 @@ jobs:
       # - name: "shfmt-lint"
       #   uses: "sunjon/actions/shfmt@master"
       #   run: ["master filter"]
-

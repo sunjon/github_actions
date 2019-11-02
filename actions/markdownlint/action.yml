@@ -1,5 +1,5 @@
 ---
-name: "markdown-lint"
+name: "markdownlint"
 
 description: "GitHub Action that runs markdownlint on all *.md files in a repo"
 

@@ -1,7 +1,9 @@
 ---
-name: "Check changes"
+name: "Lint files"
 
 on: [push]
+branches:
+  - 'branch master'
 
 # Jobs run in parallel (unless linked by `needs`)
 jobs:
@@ -10,31 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # step 1
-      # - name: "Install Linters"
-      #   needs:
-      #     [
-      #       hadolint,
-      #       kubeval,
-      #       markdownlint,
-      #       rubocop,
-      #       shellcheck,
-      #       shfmt-lint,
-      #       yamllint,
-      #     ]
-      #   with:
-      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: actions/checkout@master
 
       # Filters
       # - name: PR-filter
       #   uses: actions/bin/filter@master
-      #   args: "ref refs/pulls/*"
+      #   args: 'ref refs/pulls/*'
 
       # - name: master-filter
       #   uses: actions/bin/filter@master
-      #   args: "branch master"
+      #   args: 'branch master'
 
       # Actions
       - name: markdownlint

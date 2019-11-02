@@ -17,8 +17,6 @@ be added to the branch with the automated fixes applied.
 ## Example Workflow
 
 ```hcl
----
-
 name: "Lint"
 
 on: [push]
@@ -27,8 +25,6 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: actions/checkout@master
 
       - name: yamllint

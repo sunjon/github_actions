@@ -1,0 +1,12 @@
+---
+name: "on pull request merge, delete the branch"
+
+on: [pull_request]
+
+# TODO: pin this (and all external actions) to a specific commit
+jobs:
+  cleanup:
+    steps:
+      - name: "cleanup merged branch"
+        uses: "jessfraz/branch-cleanup-action@master"
+        secrets: ["GITHUB_TOKEN"]

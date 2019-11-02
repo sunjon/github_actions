@@ -1,39 +1,40 @@
 ---
 name: "Check changes"
 
-on: "push"
+on: [push]
 
 # Jobs run in parallel (unless linked by `needs`)
 jobs:
   lint:
-    name: "Lint code in the repository"
-    runs-on: "ubuntu-latest"
+
+    runs-on: ubuntu-latest
+
     steps:
       - name: "Install Linters"
         needs:
           [
-            "hadolint",
-            "kubeval",
-            "markdownlint",
-            "rubocop",
-            "shellcheck",
-            "shfmt-lint",
+            hadolint,
+            kubeval,
+            markdownlint,
+            rubocop,
+            shellcheck,
+            shfmt-lint,
+            yamllint,
           ]
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Checkout code"
-        uses: "actions/checkout@master"
+      - uses: actions/checkout@master
 
 
       # Filters
-      - name: "pr filter"
-        uses: "actions/bin/filter@master"
-        args: "ref refs/pulls/*"
+      # - name: "pr filter"
+      #   uses: "actions/bin/filter@master"
+      #   args: "ref refs/pulls/*"
 
-      - name: "master filter"
-        uses: "actions/bin/filter@master"
-        args: "branch master"
+      # - name: "master filter"
+      #   uses: "actions/bin/filter@master"
+      #   args: "branch master"
 
       # Actions
       - name: "bash-lint"

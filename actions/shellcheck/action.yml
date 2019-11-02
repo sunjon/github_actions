@@ -1,0 +1,8 @@
+---
+name: "shellcheck"
+
+description: "GitHub Action that runs shellcheck on all bash/sh files in a repo"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"

@@ -13,9 +13,9 @@ LABEL "com.github.actions.color"="purple"
 RUN pip install --disable-pip-version-check --quiet --no-cache-dir yamllint
 
 # Pinned versions of container dependencies
-# RUN apk --no-cache add \
+RUN apk --no-cache add \
+  bash~=5 
 #   curl~=7 \
-#   bash~=5 \
 #   git~=2
 #   jq~=1.6 \
 

@@ -12,7 +12,7 @@ LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN apk --no-cache add \
   bash~=5 \
-  fd=~7.4
+  fd~=7.4
 
 #   curl~=7 \
 #   jq~=1.6 \

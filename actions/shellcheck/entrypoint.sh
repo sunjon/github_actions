@@ -6,8 +6,9 @@ set -euo pipefail
 source /lib.sh
 
 lint() {
-  # Use fd (https://github.com/sharkdp/fd) instead of the default find
-  fd --exclude ".git" --extension sh --exec shellcheck {}
+  shellcheck -type f -name '*.sh' -f json \
+    jq -r '.[] | "\(.file):\(.line):\(.column):\(.level):\(.message) [SC\(.code)](https://github.com/koalaman/shellcheck/wiki/SC\(.code))"' \
+    | reviewdog -efm="%f:%l:%c:%t%*[^:]:%m" -name="shellcheck" -reporter=github-pr-review -level="${INPUT_LEVEL}"
 }
 
 _lint_action "${@}"

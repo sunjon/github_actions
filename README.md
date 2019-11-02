@@ -1,5 +1,8 @@
-#
-[Run GitHub actions locally](https://github.com/nektos/act)
+Delta CI: Linter actions for GitHub Action
 
-# CI status:
+## Related tools 
+
+[Act](https://github.com/nektos/act) - Run GitHub Actions locally
+
+## CI status:
 ![](https://github.com/sunjon/github_actions/workflows/.github/workflows/linters.yml/badge.svg)

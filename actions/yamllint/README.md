@@ -1,4 +1,4 @@
-# yamllint action
+# `yamllint` action
 
 ## Validations on Push
 
@@ -14,26 +14,47 @@ be added to the branch with the automated fixes applied.
 
 **Supports**: autofix on push
 
-## Example workflow
+## Example Workflow
 
 ```hcl
-workflow "on push" {
-  on = "push"
-  resolves = ["yamllint"]
-}
+---
+
+name: "Lint"
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/checkout@master
+
+      - name: yamllint
+        uses: sunjon/github_actions/actions/yamllint@master
+```
+
+```hcl
 # Used for fix on review
 # Don't enable if you plan using autofix on push
 # Or there might be race conditions
-workflow "on review" {
-  resolves = ["yamllint"]
-  on = "pull_request_review"
-}
-action "yamllint" {
-  uses = "sunjon/actions/yamllint@master"
-  # Enable autofix on push
-  # args = ["autofix"]
-  # Used for pushing changes for `fix` comments on review
-  secrets = ["GITHUB_TOKEN"]
-}
+name: "Fix"
 
+on: [pull_request_review]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@master
+
+      - name: yamllint
+        uses: sunjon/github_actions/actions/yamllint@master
+      # Enable autofix on push
+      # args = ["autofix"]
+      # Used for pushing changes for `fix` comments on review
+      secrets: ${{ secrets.GITHUB_TOKEN }}
+}
 ```

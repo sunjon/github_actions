@@ -1,0 +1,5 @@
+---
+playing_song_artist: "Playing song, {{ song_name }} by {{ artist }}"
+playing_playlist: "{{ action }} playlist {{ playlist_name }}"
+"moose": "dokney"-
+

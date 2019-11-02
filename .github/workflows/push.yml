@@ -1,0 +1,61 @@
+---
+name: "Check changes"
+
+on: "push"
+
+jobs:
+  install:
+    name: "Install Linter packages on an Ubuntu VM"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "first step"
+      - uses: "actions/checkout@master"
+      - name: "linters"
+        needs:
+          [
+            "hadolint",
+            "kubeval",
+            "markdownlint",
+            "rubocop",
+            "shellcheck",
+            "shfmt-lint",
+          ]
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+
+      # Filters
+      - name: "pr filter"
+        uses: "actions/bin/filter@master"
+        args: "ref refs/pulls/*"
+
+      - name: "master filter"
+        uses: "actions/bin/filter@master"
+        args: "branch master"
+
+      # Actions
+      - name: "bash-lint"
+        uses: "sunjon/actions/bash@master"
+
+      - name: "hadolint"
+        uses: "sunjon/actions/hadolint@master"
+
+      - name: "kubeval"
+        uses: "sunjon/actions/kubeval@master"
+
+      - name: "markdownlint"
+        uses: "sunjon/actions/markdownlint@master"
+
+      - name: "rubocop"
+        uses: "sunjon/actions/rubocop@master"
+        run: ["master filter"]
+
+      - name: "shellcheck"
+        uses: "sunjon/actions/shellcheck@master"
+
+      - name: "shfmt-lint"
+        uses: "sunjon/actions/shfmt@master"
+        run: ["master filter"]
+
+      - name: "yamllint"
+        uses: "sunjon/actions/yamllint@master"

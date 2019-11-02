@@ -13,7 +13,7 @@ LABEL "com.github.actions.color"="purple"
 RUN pip install --quiet --no-cache-dir yamllint
 
 RUN apk --no-cache add \
-#   curl~=7 \
+  curl~=7 \
 #   jq~=1.6 \
   bash~=5 \
   # git~=2

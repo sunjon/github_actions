@@ -10,7 +10,7 @@ LABEL "com.github.actions.description"="Provides linting and fixes using yamllin
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="purple"
 
-RUN pip install --quiet --no-cache-dir yamllint
+RUN pip install --disable-pip-version-check --quiet --no-cache-dir yamllint
 
 RUN apk --no-cache add \
   curl~=7 \

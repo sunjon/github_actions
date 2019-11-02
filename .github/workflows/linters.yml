@@ -27,6 +27,11 @@ jobs:
       - uses: actions/checkout@master
       - uses: sunjon/github_actions/actions/yamllint@master
 
+  cookstyle:
+    - uses: actions/checkout@master
+    - uses: sunjon/github_actions/actions/cookstyle@master
+    # - run: ["master filter"]
+
       # Filters
       # - name: PR-filter
       #   uses: actions/bin/filter@master

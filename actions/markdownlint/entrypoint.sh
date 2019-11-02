@@ -6,7 +6,7 @@ set -euo pipefail
 source /lib.sh
 
 lint() {
-	markdownlint .
+	mdl .
 }
 
 _lint_action markdownlint "${@}"

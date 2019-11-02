@@ -6,11 +6,13 @@ set -euo pipefail
 source /lib.sh
 
 lint() {
-        yamllint "${GITHUB_WORKSPACE}/**/*.yml"
+  # yamllint "${GITHUB_WORKSPACE}/**/*.yml"
+  yamllint .
 }
 
 fix() {
-        yamllint "${GITHUB_WORKSPACE}/**/*.yml --fix"
+  # yamllint "${GITHUB_WORKSPACE}/**/*.yml --fix"
+  yamllint . --fix
 }
 
 _lint_and_fix_action yamllint "${@}"

@@ -29,7 +29,8 @@ jobs:
       - uses: actions/checkout@master
 
       # step 3
-      - uses: sunjon/github_actions/actions/yamllint@master
+      - name: yamllint
+        uses: sunjon/github_actions/actions/yamllint@master
       # - uses: ./.github/actions/yamllint@master
 
 

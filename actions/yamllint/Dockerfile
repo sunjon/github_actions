@@ -18,7 +18,7 @@ RUN apk --no-cache add \
   bash~=5 \
   # git~=2
 
-COPY lib.sh /lib.sh
-COPY entrypoint.sh /entrypoint.sh
+ADD lib.sh /lib.sh
+ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

@@ -1,0 +1,5 @@
+---
+name: "On review"
+
+on: "pull_request_review"
+resolves: "fixes"

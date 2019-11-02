@@ -35,23 +35,5 @@ action "yamllint" {
   # Used for pushing changes for `fix` comments on review
   secrets = ["GITHUB_TOKEN"]
 }
+
 ```
-16 yamllint/entrypoint.sh
-Viewed
-@@ -0,0 +1,16 @@
-#!/bin/bash
-
-set -euo pipefail
-
-# shellcheck disable=SC1091
-source /lib.sh
-
-lint() {
-	yamllint .
-}
-
-fix() {
-	yamllint . --fix
-}
-
-_lint_and_fix_action yamllint "${@}"

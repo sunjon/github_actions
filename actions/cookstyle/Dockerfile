@@ -11,7 +11,7 @@ LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
 RUN apk --no-cache add \
   bash=~5 \
-  gcc=~7.4 \
+  gcc=~8.3 \
   make=~4.2
 
 # RUN apt-get update -qq && apt-get install -qqy --no-install-recommends \

@@ -34,9 +34,11 @@ jobs:
       # Actions
       - name: markdownlint
         uses: sunjon/github_actions/actions/markdownlint@master
+        continue-on-error: true
 
       - name: yamllint
         uses: sunjon/github_actions/actions/yamllint@master
+        continue-on-error: true
 
       # - name: "bash-lint"
       #   uses: "sunjon/actions/bash@master"

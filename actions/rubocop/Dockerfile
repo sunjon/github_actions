@@ -15,8 +15,9 @@ RUN apt-get update -qq && apt-get install -qqy --no-install-recommends \
   bash=4.4* \
   git=1:2.11* \
   make=4.1* \
-  gcc=4:6.3* \
-  && rm -rf /var/lib/apt/lists/*
+  gcc=4:6.3* && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm /var/cache/apk/*
 
 RUN gem install rubocop
 

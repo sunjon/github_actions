@@ -13,7 +13,9 @@ RUN apk --no-cache add \
   bash=~5 \
   gcc=~8.3 \
   libc-dev=~0.7 \
-  make=~4.2
+  make=~4.2 && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm /var/cache/apk/*
 
 RUN gem install cookstyle
 

@@ -16,7 +16,9 @@ RUN apk --no-cache add \
   curl~=7 \
   jq~=1.6 \
   bash~=4 \
-  git~=2
+  git~=2 && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm /var/cache/apk/*
 
 COPY lib.sh /lib.sh
 COPY entrypoint.sh /entrypoint.sh

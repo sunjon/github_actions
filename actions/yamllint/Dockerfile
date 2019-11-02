@@ -10,7 +10,11 @@ LABEL "com.github.actions.description"="Provides linting and fixes using yamllin
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="purple"
 
-RUN apk --no-cache add bash~=5 
+RUN apk --no-cache add \
+  bash~=5 && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm /var/cache/apk/*
+
 RUN pip install --disable-pip-version-check --quiet --no-cache-dir yamllint
 
 ADD lib.sh /lib.sh

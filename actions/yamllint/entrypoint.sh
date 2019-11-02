@@ -7,12 +7,12 @@ source /lib.sh
 
 lint() {
   # yamllint "${GITHUB_WORKSPACE}/**/*.yml"
-  yamllint .
+  yamllint -d relaxed .
 }
 
 fix() {
   # yamllint "${GITHUB_WORKSPACE}/**/*.yml --fix"
-  yamllint . --fix
+  yamllint -d relaxed . --fix
 }
 
 _lint_and_fix_action yamllint "${@}"

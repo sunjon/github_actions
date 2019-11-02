@@ -12,17 +12,8 @@ LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 RUN apk --no-cache add \
   bash=~5 \
   gcc=~8.3 \
-  libc-dev \
+  libc-dev=~0.7 \
   make=~4.2
-
-# RUN apt-get update -qq && apt-get install -qqy --no-install-recommends \
-#   curl=7.52* \
-#   jq=1.5* \
-#   bash=4.4* \
-#   git=1:2.11* \
-#   make=4.1* \
-#   gcc=4:6.3* \
-#   && rm -rf /var/lib/apt/lists/*
 
 RUN gem install cookstyle
 

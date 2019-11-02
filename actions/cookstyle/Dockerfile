@@ -9,7 +9,7 @@ LABEL "repository"="https://github.com/sunjon/actions"
 LABEL "homepage"="https://github.com/sunjon/actions"
 LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
-RUN apk --no-cache add \
+RUN apk --update add \
   bash=~5 \
   gcc=~8.3 \
   libc-dev=~0.7 \

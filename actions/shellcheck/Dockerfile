@@ -11,7 +11,7 @@ LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
 # run sed -i '/community/d' /etc/apk/repositories
 RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-RUN apk --no-cache add\
+RUN apk --update add\
   bash~=5 \
   fd@testing~=7.4 && \
   rm -rf /var/lib/apt/lists/* && \

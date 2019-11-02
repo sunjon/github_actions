@@ -12,7 +12,7 @@ LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
 COPY --from=kubeval /kubeval /bin/kubeval
 
-RUN apk --no-cache add \
+RUN apk --update add \
   curl~=7 \
   jq~=1.6 \
   bash~=4 \

@@ -10,7 +10,7 @@ LABEL "com.github.actions.description"="Provides linting and fixes using markdow
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="purple"
 
-RUN apk --no-cache add bash~=5 && \
+RUN apk --update add bash~=5 && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
 

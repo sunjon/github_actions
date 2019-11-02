@@ -28,13 +28,13 @@ jobs:
       - uses: actions/checkout@master
 
       # Filters
-      - name: PR-filter
-        uses: actions/bin/filter@master
-        args: "ref refs/pulls/*"
+      # - name: PR-filter
+      #   uses: actions/bin/filter@master
+      #   args: "ref refs/pulls/*"
 
-      - name: master-filter
-        uses: actions/bin/filter@master
-        args: "branch master"
+      # - name: master-filter
+      #   uses: actions/bin/filter@master
+      #   args: "branch master"
 
       # Actions
       - name: markdownlint

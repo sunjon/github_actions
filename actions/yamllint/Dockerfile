@@ -14,9 +14,9 @@ RUN pip install --quiet --no-cache-dir yamllint
 
 RUN apk --no-cache add \
   curl~=7 \
-#   jq~=1.6 \
-  bash~=5 \
+  bash~=5
   # git~=2
+#   jq~=1.6 \
 
 ADD lib.sh /lib.sh
 ADD entrypoint.sh /entrypoint.sh

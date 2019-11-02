@@ -1,1 +1,1 @@
-https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_FILE_PATH>/badge.svg
+https://github.com/sunjon/github_actions/workflows/linters/badge.svg

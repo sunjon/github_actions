@@ -3,14 +3,13 @@ name: "Check changes"
 
 on: "push"
 
+# Jobs run in parallel (unless linked by `needs`)
 jobs:
-  install:
-    name: "Install Linter packages on an Ubuntu VM"
+  lint:
+    name: "Lint code in the repository"
     runs-on: "ubuntu-latest"
     steps:
-      - name: "first step"
-      - uses: "actions/checkout@master"
-      - name: "linters"
+      - name: "Install Linters"
         needs:
           [
             "hadolint",
@@ -22,6 +21,9 @@ jobs:
           ]
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Checkout code"
+        uses: "actions/checkout@master"
 
 
       # Filters

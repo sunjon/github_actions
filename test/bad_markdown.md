@@ -1,7 +1,11 @@
-## Heading 2
+## incorrect top-level header:
 
-~unclosed_italic
 
-*unclosed_bold
+trailing spaces    
 
-# Heading 1
+# Top-Level header
+
+# No blank line beneath
+header
+
+# Trailing Punctuation:

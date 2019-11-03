@@ -9,9 +9,10 @@ LABEL "repository"="https://github.com/sunjon/github_actions"
 LABEL "homepage"="https://github.com/sunjon/github_actions"
 LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
-RUN apk --update add\
+RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk --update add \
   bash~=5 \
-  jq~=1.6 && \
+  fd@testing~=7.4 && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
 

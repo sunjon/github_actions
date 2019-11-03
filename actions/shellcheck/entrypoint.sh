@@ -6,7 +6,7 @@ set -euo pipefail
 source /lib.sh
 
 lint() {
-  shellcheck -type f -name '*.sh' -f json
+  shellcheck -type f -name '*.sh'
 }
 
 _lint_action "${@}"

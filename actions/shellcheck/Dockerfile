@@ -9,15 +9,13 @@ LABEL "repository"="https://github.com/sunjon/github_actions"
 LABEL "homepage"="https://github.com/sunjon/github_actions"
 LABEL "maintainer"="Delta Projects <connect+githubactions@sunjon.com>"
 
-RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ v0.9.13
 RUN apk --update add\
   bash~=5 \
   jq~=1.6 && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
 
-#   curl~=7 \
-#   git~=2
+RUN wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh| sh -s -- -b /usr/local/bin/ v0.9.13
 
 COPY lib.sh /lib.sh
 COPY entrypoint.sh /entrypoint.sh

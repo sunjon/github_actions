@@ -6,8 +6,7 @@ set -euo pipefail
 source /lib.sh
 
 lint() {
-  shellcheck -f checkstyle ${INPUT_SHELLCHECK_FLAGS:-'--external-sources'} $(find "${INPUT_PATH:-'.'}" -not -path "${INPUT_EXCLUDE}" -type f -name "${INPUT_PATTERN:-'*.sh'}") \
-  | reviewdog -f="checkstyle" -name="shellcheck" -reporter=github-pr-check -level="${INPUT_LEVEL}"
+  shellcheck -type f -name '*.sh' -f json
 }
 
 _lint_action "${@}"

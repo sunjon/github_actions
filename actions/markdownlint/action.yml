@@ -1,9 +1,21 @@
 ---
 name: "markdownlint"
-
 description: "GitHub Action that runs markdownlint on all *.md files in a repo"
-continue-on-failure: true
-
+# continue-on-failure: true
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: true
+  level:
+    description: 'Report level for reviewdog [info,warning,error]'
+    default: 'error'
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.locale }}
+    - ${{ inputs.level }}
+branding:
+  icon: 'edit'
+  color: 'gray-dark'

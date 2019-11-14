@@ -1,12 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-set -euo pipefail
+cd "$GITHUB_WORKSPACE"
 
-# shellcheck disable=SC1091
-source /lib.sh
-
-lint() {
-	mdl .
-}
-
-_lint_action markdownlint "${@}"
+export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
+mdl . \
+  | reviewdog -efm="%f:%l:%c: %m" -name="markdownlint" -reporter=github-pr-check -level="${INPUT_LEVEL}"
